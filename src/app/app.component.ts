@@ -7,4 +7,7 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'new-todolist';
+  title1 = 'new-todolist';
+  title2 = 'new-todolist';
+  title3 = 'new-todolist';
 }

@@ -78,7 +78,7 @@ export class MainComponent implements OnInit {
         .subscribe(res => {
           this.qwantity = res.length
           this.getContent()
-          console.log('getAllNoParams()',MainComponent.catName)
+          
         })
     }
   }

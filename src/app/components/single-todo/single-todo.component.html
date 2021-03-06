@@ -1,0 +1,14 @@
+<div class="main">
+    <div class="pad">
+        <a routerLink="/" style="float: right;"><img src="{{url_img}}/assets/Sign-Back-icon.png"></a><br>
+        <small style="color: rgb(189, 9, 9);">{{ todo.category }}</small>
+
+        <a [routerLink]="['/update', todo._id]"><h3>{{ todo.title }}</h3></a>
+        <quill-view-html [content]=" todo?.description "></quill-view-html>
+        
+    </div>
+
+    <br>
+      <a routerLink="/"><img src="{{url_img}}/assets/Sign-Back-icon.png"></a>
+
+</div>

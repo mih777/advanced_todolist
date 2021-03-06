@@ -1,0 +1,84 @@
+<div class="main">
+    <div 
+        ><a style="color: #0c60b9;" 
+        (click)="togle = !togle" 
+        href="" 
+        onclick="event.preventDefault()">create and settings
+        </a>
+    </div><br>
+    <div *ngIf="togle">
+        <div class="header">
+            <div>
+                <button class="btn" routerLink="/create">create</button><br><br>
+                <label>Выбрать категорию</label>
+                <select 
+     
+                (input)="inpSelect($event)" 
+                >
+                    <option selected>category</option>
+                    <option >all</option>
+                    <option *ngFor="let category of categories" >{{ category.title }}</option>
+                    <option>DELETE CATEGORY</option>
+                </select>
+            </div>
+        </div>    <!-- class="header" -->
+        <br>
+        <div>
+            
+            <div>
+                <label>Выбрать количество на странице</label>
+                <select (input)="qwant($event)" class="disp-flex2" >
+                    <option>1</option>
+                    <option>2</option>
+                    <option>3</option>
+                    <option>4</option>
+                    <option selected>5</option>
+                    <option>6</option>
+                    <option>7</option>
+                    <option>8</option>
+                    <option>9</option>
+                    <option>10</option>
+                    <option>12</option>
+                    <option>13</option>
+                    <option>14</option>
+                    <option>15</option>
+                    <option>16</option>
+                    <option>17</option>
+                </select>
+            </div>
+        </div>
+    </div>
+    <hr>
+    <div >
+        <h3 style="color: #1975a2; padding-left: 5px;" > 
+             {{ staticVar }} 
+            <small class="small-color">всего  </small> 
+            <small class="small-color-qwantity">  {{ qwantity }} </small>  
+           </h3>
+    </div>
+    
+    
+    <br>
+    
+    <div class="paginate-container">
+        <button type="button" class="paginate prev " (click)="decreese()"> << prev </button>
+        <button type="button" class="paginate next " (click)="increese()"> next >> </button>
+        
+    </div>
+    
+    <hr>
+    
+    <div class="list">
+        <div class="container" *ngFor="let todo of todos; index as i">
+            <div class="box-1">{{i+1}}.<a [routerLink]="['/single-todo', todo._id]"> {{ todo.title }}</a></div>
+            <div class="box-2">
+                <div class="icon1"><a [routerLink]="['/update', todo._id]"><i class="fas fa-edit edit-icon" ></i></a></div>
+                <div class="icon2">
+                    <a href="" 
+                    onclick="event.preventDefault()"
+                    (click)="delete(todo._id)"
+                    ><i class="fas fa-trash-alt trash-icon" ></i></a></div>
+            </div>
+        </div>
+    </div>
+</div>

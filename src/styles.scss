@@ -1,1 +1,116 @@
-/* You can add global styles to this file, and also import other style files */
+@import url('https://fonts.googleapis.com/css?family=Roboto');
+@import "~quill/dist/quill.snow.css";
+
+body {
+   font-family: 'Roboto', sans-serif;
+   font-size: 1rem;
+   line-height: 1.6;
+   background-color: #fff;
+   color: #333;
+ }
+ 
+
+li {
+   list-style-type: none; /* Убираем маркеры */
+} 
+
+// .form {
+//     input
+// }
+
+.fas ,fa-edit {
+   
+}  
+
+.fas ,fa-trash-alt {
+   margin-right: 5px;
+   margin-left: 15px;
+}
+
+.trash-icon:hover {
+   color: rgb(201, 1, 1);
+}
+
+.trash-icon {
+   color: rgb(255, 47, 47);
+}
+
+.edit-icon {
+   color: #6068ce;
+}
+
+.edit-icon:hover {
+   color: #575ca1;
+}
+
+
+
+
+.header {
+   display: inline;
+   //border: 1px solid gray;
+}
+
+.edit-icon, .trash-icon {
+   font-size: 20px;
+}
+
+.main {
+   margin: 0 auto;
+   width: 700px;
+   //border: 1px solid gray;
+   padding: 5px;
+   margin-top: 20px;
+   max-width: 100%;
+}
+
+.container{
+   flex: 1;
+   display: flex;
+   //width: 100%;
+   align-items: stretch;
+   flex-direction: row;
+   justify-content: flex-start;
+   //border: 1px solid grey;
+   padding-right: 5px;
+   margin-bottom: 10px;
+}
+
+
+.box-1 {
+   width: 100%;
+   flex: 8;
+   //border: 1px solid gray;
+}
+
+.box-2 {
+
+   width: 100%;
+   flex: 1; 
+   display: flex;
+   //border: 1px solid gray;
+}
+
+.icon1{
+   flex: 1;
+}
+.icon2{
+   flex: 1;
+}
+
+.outer {
+   text-align: center;
+   
+ }
+
+
+
+a {
+   text-decoration: none;
+   color: #3e5e6e;
+}
+
+a:hover {
+   text-decoration: underline;
+   color: rgba(4, 64, 228, 0.52);
+}

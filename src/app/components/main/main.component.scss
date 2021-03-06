@@ -1,0 +1,138 @@
+select {
+    margin-left: 36%;
+    width: 147px;
+    height: 37px;
+    background-color: white;
+    font-size: 22px;
+    padding-left: 10px;
+    border-radius: 3px;
+    //border: 1px solid #0484aa99;
+    color: #4982a5;
+    outline: none;
+    background-image: none;
+    -webkit-appearance: none;
+}
+
+
+
+.small-color{
+    color: rgb(45, 121, 15);
+    font-size: 14px;
+}
+
+.small-color-qwantity{
+    color: #959e54;
+    font-size: 21px;
+}
+
+
+
+.paginate {
+    width: 150px;
+    height: 41px;
+    background-color: white;
+    font-size: 22px;
+    border: 1px solid #0063e6;
+    outline: none;
+    border-radius: 3px;
+    
+}
+.paginate-container{
+    display: flex; 
+    justify-content: space-evenly;
+}
+
+
+
+.prev{
+    color:  rgb(8, 99, 105);
+    
+}
+
+.next{
+    color:  rgb(8, 99, 105);
+    
+}
+
+.btn {
+    width: 235px;
+    height: 60px;
+    color:  rgb(0, 99, 230);
+    background-color: white;
+    font-size: 30px;
+    border: 1px solid  rgb(0, 99, 230);
+    outline: none;
+    border-radius: 3px;
+}
+
+.btn:hover {
+    background-color: rgb(0, 99, 230);
+    color: white;
+}
+
+@media (max-width: 650px) {
+
+    select {margin-left: 10%;}
+    .edit-icon, .trash-icon {
+        font-size: 20px;
+    }
+
+    .paginate-container{
+        display: flex; 
+        justify-content: space-between;
+    }
+
+}
+
+
+
+@media (max-width: 440px) {
+
+    .edit-icon {
+        font-size: 30px;
+    }
+    
+    .trash-icon {
+        display: none;
+    }  
+    
+    .paginate-container{
+        display: flex; 
+        justify-content: space-between;
+    }
+
+}
+
+@media (max-width: 440px) {
+
+    
+
+    select {
+        width: 100%;
+        margin: 0 auto;
+    }
+
+    .btn {
+        width: 100%;
+        margin-bottom: 20px;
+    }
+
+    .main {
+        margin: 0 auto;
+        width: 98%;
+        //border: 1px solid gray;
+        padding: 0;
+        margin-top: 20px;
+        max-width: 100%;
+    }
+
+    .container{
+        margin-bottom: 15px;
+    }
+
+    .paginate-container{
+        display: flex; 
+        justify-content: space-between;
+    }
+
+}

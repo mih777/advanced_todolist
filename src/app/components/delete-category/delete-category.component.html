@@ -1,0 +1,28 @@
+<div class="main">
+    <a routerLink="/"><img src="{{url_img}}/assets/Sign-Back-icon.png"></a>
+    <br><br>
+    <h3>Страница удаления категории</h3>
+
+        <table class="table">
+            <thead>
+              <tr>
+                <th scope="col">Title</th>
+                <th scope="col">Delete</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr *ngFor="let category of categories">
+                <td>{{ category.title }}</td>
+                <td><a 
+                        href="" 
+                        onclick="event.preventDefault()" 
+                        (click)="deleteCategory(category._id, category.title)"
+                    >delete</a></td>
+              </tr>
+            </tbody>
+          </table>
+    <br>
+    
+
+   
+</div>

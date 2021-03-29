@@ -1,6 +1,6 @@
 <div class="main">
     <h2>Страница добавления</h2>
-    <form [formGroup]="form" (ngSubmit)="submit()">
+    <form [formGroup]="form" (ngSubmit)="create_todo()">
         <div class="form-group">
           <label for="exampleInputPassword1">title</label>
           <input type="text" class="form-control" formControlName="title">

@@ -14,7 +14,7 @@ export class MainComponent implements OnInit {
   todos: Todo[] = []
   categories: Category[] = []
 
-  static pagination = 5
+  static pagination = 17
   page = 1
   qwantity
   static catName = 'all'
@@ -92,7 +92,13 @@ export class MainComponent implements OnInit {
 
   decreese(){
     this.page -=1
-    this.getContent()
+    if(this.page == 0){
+      this.page = 1
+      this.getContent()
+    }else{
+      this.getContent()
+    }
+    
   }
 
   increese(){
@@ -110,10 +116,13 @@ export class MainComponent implements OnInit {
 
 
   delete(id: string): void{
-    this.service.delete(id)
+    let isConfirm = confirm("Действительно удалить ?");
+    if(isConfirm){
+      this.service.delete(id)
       .subscribe(() => {
         this.getContent()
-      }) 
+      })
+    } 
     
   }
 

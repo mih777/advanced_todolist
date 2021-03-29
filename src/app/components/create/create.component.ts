@@ -58,7 +58,7 @@ export class CreateComponent implements OnInit {
     })
   }
 
-  submit() {
+  create_todo() {
     const formData = { ...this.form.value }
 
     this.service.create({

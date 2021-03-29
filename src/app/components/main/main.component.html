@@ -1,11 +1,23 @@
 <div class="main">
-    <div 
-        ><a style="color: #0c60b9;" 
-        (click)="togle = !togle" 
-        href="" 
-        onclick="event.preventDefault()">create and settings
-        </a>
-    </div><br>
+    <div class="header-menu ">
+        <div class="box ">
+            <h3 style="color: #1975a2; padding-left: 5px;" > 
+                 {{ staticVar }} 
+                <small class="small-color">всего  </small> 
+                <small class="small-color-qwantity">  {{ qwantity }} </small>  
+               </h3>
+        </div>
+        <div class="box settings">
+            <a style="color: #0c60b9;" 
+                (click)="togle = !togle" 
+                href="" 
+                onclick="event.preventDefault()">create and settings
+            </a>
+            <br>
+        </div>
+        
+    </div>
+    <!--/////////////Раскрывающийся див///////////////////////////////////  -->
     <div *ngIf="togle">
         <div class="header">
             <div>
@@ -48,26 +60,14 @@
             </div>
         </div>
     </div>
-    <hr>
-    <div >
-        <h3 style="color: #1975a2; padding-left: 5px;" > 
-             {{ staticVar }} 
-            <small class="small-color">всего  </small> 
-            <small class="small-color-qwantity">  {{ qwantity }} </small>  
-           </h3>
-    </div>
-    
-    
+    <!--////////////////////////////////////////////////  -->
     <br>
     
     <div class="paginate-container">
         <button type="button" class="paginate prev " (click)="decreese()"> << prev </button>
-        <button type="button" class="paginate next " (click)="increese()"> next >> </button>
-        
+        <button type="button" class="paginate next " (click)="increese()"> next >> </button>  
     </div>
-    
     <hr>
-    
     <div class="list">
         <div class="container" *ngFor="let todo of todos; index as i">
             <div class="box-1">{{i+1}}.<a [routerLink]="['/single-todo', todo._id]"> {{ todo.title }}</a></div>

@@ -13,6 +13,20 @@ select {
     -webkit-appearance: none;
 }
 
+.header-menu{
+    display: grid;
+    grid-template-columns: 50% 50%;
+    justify-items: center;
+    align-items: center;
+}
+.settings{
+    font-size: 27px;
+}
+
+.box{
+    justify-self: center;
+    align-self: center;
+}
 
 
 .small-color{

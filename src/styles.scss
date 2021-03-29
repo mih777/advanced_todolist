@@ -44,7 +44,9 @@ li {
 }
 
 
-
+.border{
+   border: 1px solid gray;
+}
 
 .header {
    display: inline;
@@ -56,6 +58,7 @@ li {
 }
 
 .main {
+   display: grid;
    margin: 0 auto;
    width: 700px;
    //border: 1px solid gray;

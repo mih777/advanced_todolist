@@ -10,10 +10,8 @@ import { MainComponent } from './components/main/main.component';
 import { CreateComponent } from './components/create/create.component';
 import { UpdateComponent } from './components/update/update.component';
 import { SingleTodoComponent } from './components/single-todo/single-todo.component';
-//import { ServiceWorkerModule } from '@angular/service-worker';
-//import { environment } from '../environments/environment';
 import { DeleteCategoryComponent } from './components/delete-category/delete-category.component';
-import { HeaderComponent } from './header/header.component'
+
 
 @NgModule({
   declarations: [
@@ -23,7 +21,7 @@ import { HeaderComponent } from './header/header.component'
     UpdateComponent,
     SingleTodoComponent,
     DeleteCategoryComponent,
-    HeaderComponent
+    
   ],
   imports: [
     BrowserModule,

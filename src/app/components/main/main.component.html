@@ -4,106 +4,53 @@
         <div class="row ">
             <div class="col-12 menu_a">
                 <ul>
+                    <li><a routerLink="/create" routerLinkActive="active"><h1>Create</h1></a></li>
                     <li>
-                        <a routerLink="/create" routerLinkActive="active">Create</a>
+                        <select 
+                        class="select1"
+                        (input)="inpSelect($event)" 
+                        >
+                            <option selected>category</option>
+                            <option >all</option>
+                            <option *ngFor="let category of categories" >{{ category.title }}</option>
+                            <option>DELETE CATEGORY</option>
+                        </select> 
                     </li>
                     <li>
-                        
-                            <select 
-                            class="select1"
-                            (input)="inpSelect($event)" 
-                            >
-                                <option selected>category</option>
-                                <option >all</option>
-                                <option *ngFor="let category of categories" >{{ category.title }}</option>
-                                <option>DELETE CATEGORY</option>
-                            </select>
-                        
-                    </li>
-                    <li>
-                        
-                            <select (input)="qwant($event)" class="select2" >
-                                <option>1</option>
-                                <option>2</option>
-                                <option>3</option>
-                                <option>4</option>
-                                <option selected>5</option>
-                                <option>6</option>
-                                <option>7</option>
-                                <option>8</option>
-                                <option>9</option>
-                                <option>10</option>
-                                
-                            </select>
-                        
+                        <select (input)="qwant($event)" class="select2" >
+                            <option selected>Qw</option>
+                            <option>2</option>
+                            <option>3</option>
+                            <option>4</option>
+                            <option>5</option>
+                            <option>6</option>
+                            <option>7</option>
+                            <option>8</option>
+                            <option>9</option>
+                            <option>10</option>
+                        </select>  
                     </li>
                 </ul>
-            </div>
-            
-        </div> 
-
-        <!-- ////////////////////////////////////////////////////////////// -->
-        <div class="box ">
-            <div>
-                <h5 style="color: #1975a2; padding-left: 5px;" > 
-                    {{ staticVar }} 
-                   <small class="small-color">всего  </small> 
-                   <small class="small-color-qwantity">  {{ qwantity }} </small>  
-               </h5>
-            </div>
-        </div>
-        <div class="box2  settings">
-            <div>
-                <a style="color: #0c60b9;" 
-                    (click)="togle = !togle" 
-                    href="" 
-                    onclick="event.preventDefault()">create and settings
-                </a>
-            </div>
-        </div>
-        
+            </div> 
+        </div>   
     </div><br>
-    <!--/////////////Раскрывающийся див///////////////////////////////////  -->
-    <div *ngIf="togle">
-        <div >
-
-            <div class=" ">
-                <button class="btn" routerLink="/create">create</button><br><br>
-            </div>
-            <div>
-                <div class="item ">
-                
-                    <label>Выбрать категорию</label>
-                    <select 
-         
-                    (input)="inpSelect($event)" 
-                    >
-                        <option selected>category</option>
-                        <option >all</option>
-                        <option *ngFor="let category of categories" >{{ category.title }}</option>
-                        <option>DELETE CATEGORY</option>
-                    </select>
-                </div>
-    
-                
-            </div>
-
-            
-
+    <div class="box ">
+        <div>
+            <h5 style="color: #1975a2; padding-left: 5px;" > 
+                {{ staticVar }} 
+               <small class="small-color">всего  </small> 
+               <small class="small-color-qwantity">  {{ qwantity }} </small>  
+           </h5>
         </div>
-
-        
     </div>
-    <!--////////////////////////////////////////////////  -->
     <br>
-    
     <div class="paginate-container">
         <button type="button" class="paginate prev " (click)="decreese()"> << prev </button>
         <button type="button" class="paginate next " (click)="increese()"> next >> </button>  
     </div>
     <hr>
-    <div class="list">
-        <div class="container" *ngFor="let todo of todos; index as i">
+    <div class="list" *ngIf="!loading">
+        <div class="container" *ngFor="let todo of todos; index as i; else loadingBlock">
             <div class="box-1">{{i+1}}.<a [routerLink]="['/single-todo', todo._id]"> {{ todo.title }}</a></div>
             <div class="box-2">
                 <div class="icon1"><a [routerLink]="['/update', todo._id]"><i class="fas fa-edit edit-icon" ></i></a></div>
@@ -111,8 +58,23 @@
                     <a href="" 
                     onclick="event.preventDefault()"
                     (click)="delete(todo._id)"
-                    ><i class="fas fa-trash-alt trash-icon" ></i></a></div>
+                    ><i class="fas fa-trash-alt trash-icon" ></i></a>
+                </div>
             </div>
         </div>
+
+        
+    
+
+    </div>
+    
+
+</div>
+
+<div *ngIf="loading" class="loader">
+    <p>Сейчас загрузится, подождите...</p>
+    <!-- <div class="spinner-border text-primary" style="width: 3rem;" role="status"> -->
+    <div class="spinner-border text-primary" style="width: 10rem; height: 10rem;" role="status">
+    <span class="sr-only">Loading...</span>
     </div>
 </div>

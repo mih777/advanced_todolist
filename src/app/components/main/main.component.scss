@@ -1,6 +1,52 @@
-select {
+ 
+ul {
+  list-style: none;
+}
+
+// $menu-item: rgba(73, 90, 50, 0.979);
+// $menu-item-hover: rgba(157, 185, 120, 0.979);
+
+$menu-item: rgba(50, 79, 90, 0.979);
+$menu-item-hover: rgba(199, 75, 17, 0.979);
+
+li{
+  display: inline-block;
+  margin-right: 1rem; 
+}
+
+.menu_a a{
+    font-size: 1.5rem;
+    text-decoration: none;
+    color: $menu-item;
+    &:hover{
+        //text-decoration: underline;
+        color: $menu-item-hover;
+      }
+}
+  
+ 
+.active{
+  color: $menu-item-hover;
+}
+
+
+.select1 {
     margin-left: 36%;
-    width: 147px;
+    width: 100px;
+    height: 37px;
+    background-color: white;
+    font-size: 22px;
+    padding-left: 10px;
+    border-radius: 3px;
+    //border: 1px solid #0484aa99;
+    color: #4982a5;
+    outline: none;
+    background-image: none;
+    -webkit-appearance: none;
+}
+.select2 {
+    margin-left: 36%;
+    width: 50px;
     height: 37px;
     background-color: white;
     font-size: 22px;
@@ -15,7 +61,7 @@ select {
 
 .header-menu{
     display: grid;
-    grid-template-columns: 50% 50%;
+    grid-template-columns: 100% 30% 30%;
     justify-items: center;
     align-items: center;
 }

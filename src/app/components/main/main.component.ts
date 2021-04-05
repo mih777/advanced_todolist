@@ -14,7 +14,7 @@ export class MainComponent implements OnInit {
   todos: Todo[] = []
   categories: Category[] = []
 
-  static pagination = 17
+  static pagination = 10
   page = 1
   qwantity
   static catName = 'all'
@@ -37,11 +37,12 @@ export class MainComponent implements OnInit {
   inpSelect(event){
     if(event.target.value === 'DELETE CATEGORY'){
       this.router.navigate(['/delete-category'])
+      console.log(event.target.value)
     }
     MainComponent.catName = event.target.value
     this.getContent()
     this.getItemsQwantity()
-    console.log(MainComponent.catName)
+    console.log(event.target.value)
   }
 
   
@@ -69,7 +70,7 @@ export class MainComponent implements OnInit {
         .subscribe(res => {
           this.qwantity = res.length
           this.getContent()
-          console.log('getItemsQwantity()', MainComponent.catName)
+          
         })
     }
 

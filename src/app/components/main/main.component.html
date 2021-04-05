@@ -1,5 +1,48 @@
 <div class="main">
     <div class="header-menu ">
+        <!-- ///////////////////////////////////////////////////// -->
+        <div class="row ">
+            <div class="col-12 menu_a">
+                <ul>
+                    <li>
+                        <a routerLink="/create" routerLinkActive="active">Create</a>
+                    </li>
+                    <li>
+                        
+                            <select 
+                            class="select1"
+                            (input)="inpSelect($event)" 
+                            >
+                                <option selected>category</option>
+                                <option >all</option>
+                                <option *ngFor="let category of categories" >{{ category.title }}</option>
+                                <option>DELETE CATEGORY</option>
+                            </select>
+                        
+                    </li>
+                    <li>
+                        
+                            <select (input)="qwant($event)" class="select2" >
+                                <option>1</option>
+                                <option>2</option>
+                                <option>3</option>
+                                <option>4</option>
+                                <option selected>5</option>
+                                <option>6</option>
+                                <option>7</option>
+                                <option>8</option>
+                                <option>9</option>
+                                <option>10</option>
+                                
+                            </select>
+                        
+                    </li>
+                </ul>
+            </div>
+            
+        </div> 
+
+        <!-- ////////////////////////////////////////////////////////////// -->
         <div class="box ">
             <div>
                 <h5 style="color: #1975a2; padding-left: 5px;" > 
@@ -42,28 +85,7 @@
                     </select>
                 </div>
     
-                <div class="item ">
                 
-                    <label>Выбрать количество на странице</label>
-                    <select (input)="qwant($event)" class="disp-flex2" >
-                        <option>1</option>
-                        <option>2</option>
-                        <option>3</option>
-                        <option>4</option>
-                        <option selected>5</option>
-                        <option>6</option>
-                        <option>7</option>
-                        <option>8</option>
-                        <option>9</option>
-                        <option>10</option>
-                        <option>12</option>
-                        <option>13</option>
-                        <option>14</option>
-                        <option>15</option>
-                        <option>16</option>
-                        <option>17</option>
-                    </select>
-                </div>
             </div>
 
             
